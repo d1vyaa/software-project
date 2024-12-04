@@ -194,5 +194,3 @@ class GCMS:
         # If the object is found, return its parent bin ID; otherwise, return None
         return object_node.key.parent_id if object_node else None
         
-#################################GurnoorSingh###################################################
-#################################GurnoorSingh###################################################
