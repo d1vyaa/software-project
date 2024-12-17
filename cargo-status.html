@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Status Update</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cargo Status Update</h1>
+    </header>
+
+    <main>
+        <form id="cargoStatusForm">
+            <label for="cargoId">Cargo ID:</label>
+            <input type="text" id="cargoId" name="cargoId" required>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="in-transit">In Transit</option>
+                <option value="delivered">Delivered</option>
+                <option value="delayed">Delayed</option>
+                <option value="pending">Pending</option>
+            </select>
+
+            <label for="location">Current Location:</label>
+            <input type="text" id="location" name="location">
+
+            <label for="updateTime">Update Time:</label>
+            <input type="datetime-local" id="updateTime" name="updateTime">
+
+            <button type="submit">Update Status</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cargo Management System</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCMS Frontend</title>
+    <script>
+        const baseURL = "http://127.0.0.1:8000";
+
+        async function addBin() {
+            const binId = document.getElementById("binId").value;
+            const capacity = document.getElementById("capacity").value;
+
+            const response = await fetch(`${baseURL}/add_bin/`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ bin_id: parseInt(binId), capacity: parseInt(capacity) }),
+            });
+
+            const result = await response.json();
+            alert(result.message || "Error adding bin");
+        }
+
+        async function getBinInfo() {
+            const binId = document.getElementById("queryBinId").value;
+
+            const response = await fetch(`${baseURL}/bin_info/${binId}`);
+            const result = await response.json();
+
+            if (response.ok) {
+                alert(`Remaining capacity: ${result.remaining_capacity}\nObjects: ${result.objects}`);
+            } else {
+                alert(result.detail);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>GCMS System</h1>
+
+    <h2>Add Bin</h2>
+    <label for="binId">Bin ID:</label>
+    <input type="text" id="binId" />
+    <label for="capacity">Capacity:</label>
+    <input type="text" id="capacity" />
+    <button onclick="addBin()">Add Bin</button>
+
+    <h2>Get Bin Info</h2>
+    <label for="queryBinId">Bin ID:</label>
+    <input type="text" id="queryBinId" />
+    <button onclick="getBinInfo()">Get Info</button>
+</body>
+</html>

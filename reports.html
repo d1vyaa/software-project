@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cargo Management Reports</h1>
+    </header>
+
+    <main>
+        <!-- Report Type Selection -->
+        <form id="reportForm">
+            <label for="reportType">Report Type:</label>
+            <select id="reportType" name="reportType">
+                <option value="cargo-list">Cargo List</option>
+                <option value="shipment-summary">Shipment Summary</option>
+                <option value="status-summary">Status Summary</option>
+                <option value="bin-utilization">Bin Utilization</option>
+                <option value="object-allocation">Object Allocation</option>
+            </select>
+
+            <label for="dateRange">Date Range:</label>
+            <input type="date" id="startDate" name="startDate"> to
+            <input type="date" id="endDate" name="endDate">
+
+            <button type="submit">Generate Report</button>
+        </form>
+
+        <!-- Bin Utilization Report -->
+        <section id="binUtilizationReport">
+            <h2>Bin Utilization Report</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bin ID</th>
+                        <th>Capacity</th>
+                        <th>Current Utilization</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic content will populate here -->
+                </tbody>
+            </table>
+            <button onclick="window.print()">Print Report</button>
+        </section>
+
+        <!-- Object Allocation Report -->
+        <section id="objectAllocationReport">
+            <h2>Object Allocation Report</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Object ID</th>
+                        <th>Size</th>
+                        <th>Color</th>
+                        <th>Allocated Bin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic content will populate here -->
+                </tbody>
+            </table>
+            <button onclick="exportToCSV()">Export to CSV</button>
+            <button onclick="exportToPDF()">Export to PDF</button>
+            <label for="search">Search:</label>
+            <input type="text" id="search" placeholder="Search objects...">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cargo Management System</p>
+    </footer>
+
+    <script>
+        function exportToCSV() {
+            alert('Export to CSV functionality goes here.');
+            // Implement CSV export logic
+        }
+
+        function exportToPDF() {
+            alert('Export to PDF functionality goes here.');
+            // Implement PDF export logic
+        }
+    </script>
+</body>
+</html>

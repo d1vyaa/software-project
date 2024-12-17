@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargo Details Entry</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cargo Details Entry</h1>
+    </header>
+
+    <main>
+        <form id="cargoDetailsForm">
+            <label for="cargoId">Cargo ID:</label>
+            <input type="text" id="cargoId" name="cargoId" required>
+
+            <label for="cargoName">Cargo Name:</label>
+            <input type="text" id="cargoName" name="cargoName" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+
+            <label for="dimensions">Dimensions (LxWxH):</label>
+            <input type="text" id="dimensions" name="dimensions" required>
+
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cargo Management System</p>
+    </footer>
+</body>
+</html>

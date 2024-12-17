@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Cargo Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+header {
+    background: linear-gradient(90deg, #003366, #00509e);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+#sidebar {
+    background: #003366;
+    color: white;
+    width: 250px;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 70px; /* Below the fixed header */
+    left: 0;
+    overflow-y: auto;
+}
+
+#sidebar nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+#sidebar nav h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+#sidebar nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    background: #00509e;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#sidebar nav a:hover {
+    background: #0073e6;
+}
+
+#sidebar nav .active {
+    background: #0073e6;
+}
+
+/* Main Content */
+main {
+    margin-left: 270px; /* To offset the sidebar */
+    padding: 20px;
+    padding-top: 100px; /* To offset the fixed header */
+    flex: 1;
+}
+
+main h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #003366;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #00509e;
+}
+
+.quick-actions button {
+    background: #0073e6;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.quick-actions button:hover {
+    background: #00509e;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #003366;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cargo Management System</h1>
+        </header>
+
+        <aside id="sidebar">
+            <nav>
+                <h2>Navigation</h2>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="cargo-details.html">Cargo Details</a>
+                <a href="shipment-schedule.html">Shipment Scheduling</a>
+                <a href="cargo-status.html">Cargo Status Update</a>
+                <a href="invoice.html">Invoice Management</a>
+                <a href="reports.html">Reports</a>
+                <a href="tracking.html">Track Shipment</a>
+                <a href="login.html">Logout</a>
+            </nav>
+        </aside>
+
+        <main>
+            <section>
+                <h2>Welcome to Dashboard!</h2>
+
+                <div class="card">
+                    <h3>System Overview</h3>
+                    <p>Total Shipments: <strong>1,245</strong></p>
+                    <p>Pending Shipments: <strong>34</strong></p>
+                    <p>Delivered Shipments: <strong>1,211</strong></p>
+                </div>
+
+                <div class="card">
+                    <h3>Recent Activities</h3>
+                    <ul>
+                        <li>Cargo ID 1234 marked as delivered.</li>
+                        <li>New shipment scheduled for Cargo ID 5678.</li>
+                        <li>Status updated for Cargo ID 3456: In Transit.</li>
+                    </ul>
+                </div>
+
+                <div class="card quick-actions">
+                    <h3>Quick Actions</h3>
+                    <button onclick="location.href='cargo-details.html'">Add New Cargo</button>
+                    <button onclick="location.href='shipment-schedule.html'">Schedule Shipment</button>
+                    <button onclick="location.href='tracking.html'">Track Shipment</button>
+                </div>
+                <div class="card">
+                    <h3>Notifications</h3>
+                    <p>No new notifications.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Cargo Management System</p>
+    </footer>
+</body>
+</html>

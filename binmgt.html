@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bin Management - Cargo Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bin Management</h1>
+    </header>
+
+    <main>
+        <!-- Bin Parameters Screen -->
+        <section id="binParameters">
+            <h2>Bin Parameters</h2>
+            <form id="binForm" action="#" method="post">
+                <label for="binId">Bin ID:</label>
+                <input type="number" id="binId" name="binId" required>
+                
+                <label for="capacity">Capacity:</label>
+                <input type="number" id="capacity" name="capacity" required>
+
+                <button type="submit">Add Bin</button>
+            </form>
+            <div id="binConfirmation"></div>
+        </section>
+
+        <!-- Bin Information Screen -->
+        <section id="binInfo">
+            <h2>Bin Information</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bin ID</th>
+                        <th>Capacity</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="binList">
+                    <!-- Dynamic content will be added here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Object Parameters Screen -->
+        <section id="objectParameters">
+            <h2>Object Parameters</h2>
+            <form id="objectForm" action="#" method="post">
+                <label for="objectId">Object ID:</label>
+                <input type="number" id="objectId" name="objectId" required>
+
+                <label for="size">Size:</label>
+                <input type="number" id="size" name="size" required>
+
+                <label for="color">Color:</label>
+                <select id="color" name="color" required>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Yellow">Yellow</option>
+                    <option value="Green">Green</option>
+                </select>
+
+                <button type="submit">Add Object</button>
+            </form>
+        </section>
+
+        <!-- Object Allocation Screen -->
+        <section id="objectAllocation">
+            <h2>Object Allocation</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Object ID</th>
+                        <th>Size</th>
+                        <th>Color</th>
+                        <th>Bin ID</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="objectList">
+                    <!-- Dynamic content will be added here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cargo Management System</p>
+    </footer>
+</body>
+</html>
